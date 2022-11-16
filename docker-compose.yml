@@ -1,0 +1,15 @@
+version: '2.12'
+services:
+  db:
+    image: postgres:13.8-alpine
+    container_name: postgres_springdevdojo
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
